@@ -24,7 +24,7 @@ do
     values+=(${results[$key]})
 done
 
-sorted_values=($(echo "${values[@]}" | tr ' ' '\n' | sort -nr))
+sorted_values=($(echo "${values[@]}" | tr ' ' '\n' | sort -n))
 echo "Sorted values: ${sorted_values[@]}"
 
 echo "Sorted results:"
