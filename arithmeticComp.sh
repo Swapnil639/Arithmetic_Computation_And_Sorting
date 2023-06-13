@@ -9,5 +9,5 @@ read b
 echo "Enter value for c: "
 read c
 
-result=$(( c + a / b ))
-echo "Result of c + a / b = $result"
+result=$(( a % b + c ))
+echo "Result of a % b + c = $result"
