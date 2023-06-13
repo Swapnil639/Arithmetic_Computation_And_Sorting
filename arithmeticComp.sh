@@ -17,7 +17,11 @@ results["c + a / b"]=$(( c + a / b ))
 results["a % b + c"]=$(( a % b + c ))
 
 echo "Results:"
+declare -a values
 for key in "${!results[@]}"
 do
     echo "$key = ${results[$key]}"
+    values+=(${results[$key]})
 done
+
+echo "Values: ${values[@]}"
