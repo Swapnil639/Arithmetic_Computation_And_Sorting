@@ -9,4 +9,5 @@ read b
 echo "Enter value for c: "
 read c
 
-echo "a = $a, b = $b, c = $c"
+result=$(( a + b * c ))
+echo "Result of a + b * c = $result"
