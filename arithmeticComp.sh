@@ -9,5 +9,15 @@ read b
 echo "Enter value for c: "
 read c
 
-result=$(( a % b + c ))
-echo "Result of a % b + c = $result"
+declare -A results
+
+results["a + b * c"]=$(( a + b * c ))
+results["a * b + c"]=$(( a * b + c ))
+results["c + a / b"]=$(( c + a / b ))
+results["a % b + c"]=$(( a % b + c ))
+
+echo "Results:"
+for key in "${!results[@]}"
+do
+    echo "$key = ${results[$key]}"
+done
