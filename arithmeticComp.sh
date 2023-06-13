@@ -24,4 +24,17 @@ do
     values+=(${results[$key]})
 done
 
-echo "Values: ${values[@]}"
+sorted_values=($(echo "${values[@]}" | tr ' ' '\n' | sort -nr))
+echo "Sorted values: ${sorted_values[@]}"
+
+echo "Sorted results:"
+for value in "${sorted_values[@]}"
+do
+    for key in "${!results[@]}"
+    do
+        if [[ ${results[$key]} -eq $value ]]
+        then
+            echo "$key = ${results[$key]}"
+        fi
+    done
+done
